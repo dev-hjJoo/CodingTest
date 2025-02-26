@@ -17,15 +17,14 @@ release = 'v0.0.1'
 import os
 import sys
 
-from recommonmark.parser import CommonMarkParser
-sys.path.insert(0, os.path.abspath('.'))
-
-source_parsers = {
-    '.md': CommonMarkParser,
+source_suffix = {
+    '.rst': 'restructuredtext',
+    '.txt': 'markdown',
+    '.md': 'markdown',
 }
-source_suffix = ['.rst', '.md']
 
-extensions = ['recommonmark']
+extensions = ['myst_parser']
+myst_heading_anchors = 3
 
 templates_path = ['_templates']
 exclude_patterns = []
